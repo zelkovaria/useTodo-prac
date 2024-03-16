@@ -8,7 +8,7 @@ const TodosList = () => {
 
   return (
     <>
-      <div>{data.title}</div>
+      <div>{data}</div>
     </>
   );
 };
