@@ -4,7 +4,7 @@ import axios from "axios";
 const useTodo = (id) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(undefined);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,7 +14,6 @@ const useTodo = (id) => {
           `https://jsonplaceholder.typicode.com/todos/${id}`
         );
         setData(response.data);
-        console.log(response.data);
       } catch (error) {
         setError(error);
       } finally {
