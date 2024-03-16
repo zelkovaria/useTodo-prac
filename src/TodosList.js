@@ -6,11 +6,7 @@ const TodosList = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useTodo(id);
 
-  return (
-    <>
-      <div>{data}</div>
-    </>
-  );
+  return <>{!isLoading && data && <div>{data.title}</div>}</>;
 };
 
 export default TodosList;

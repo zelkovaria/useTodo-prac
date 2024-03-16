@@ -15,6 +15,7 @@ const useTodo = (id) => {
         );
         setData(response.data);
         setError(undefined);
+        console.log(response.data);
       } catch (error) {
         setData(undefined);
         setError(error);
