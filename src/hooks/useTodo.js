@@ -15,7 +15,6 @@ const useTodo = (id) => {
         );
         setData(response.data);
       } catch (error) {
-        setData(null);
         setError(error);
       } finally {
         setIsLoading(false);
