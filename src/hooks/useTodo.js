@@ -14,9 +14,8 @@ const useTodo = (id) => {
           `https://jsonplaceholder.typicode.com/todos/${id}`
         );
         setData(response.data);
-        setError(undefined);
       } catch (error) {
-        setData(undefined);
+        setData(null);
         setError(error);
       } finally {
         setIsLoading(false);
