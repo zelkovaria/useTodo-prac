@@ -9,7 +9,8 @@ const TodosList = () => {
   return (
     <>
       {isLoading && <div>로딩중</div>}
-      {!isLoading && data && <div>{data.title}</div>}
+      {!isLoading && !error && data && <div>{data.title}</div>}
+      {!isLoading && error && <div> error </div>}
     </>
   );
 };
