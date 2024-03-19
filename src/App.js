@@ -1,12 +1,13 @@
 import "./App.css";
-import { BrowserRouter } from "react-router-dom";
-import RoutesContainer from "./RoutesContainer";
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import TodosList from "./TodosList";
 
 function App() {
   return (
-    <BrowserRouter>
-      <RoutesContainer />
-    </BrowserRouter>
+    <Routes>
+      <Route path="/todos/:id" element={<TodosList />}></Route>
+    </Routes>
   );
 }
 
