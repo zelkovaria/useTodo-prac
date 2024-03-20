@@ -6,13 +6,19 @@ const TodosList = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useTodo(id);
 
-  return (
-    <>
-      {isLoading && <div>로딩중</div>}
-      {!isLoading && !error && data && <div>{data.title}</div>}
-      {!isLoading && error && <div> error </div>}
-    </>
-  );
+  if (isLoading) {
+    return <div>로딩중</div>;
+  }
+
+  if (!isLoading && error) {
+    return <div>에러 발생</div>;
+  }
+
+  if (!isLoading && !error && data) {
+    return <div>{data.title}</div>;
+  }
+
+  return <>기다려주세요</>;
 };
 
 export default TodosList;
