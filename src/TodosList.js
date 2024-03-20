@@ -10,11 +10,11 @@ const TodosList = () => {
     return <div>로딩중</div>;
   }
 
-  if (!isLoading && error) {
+  if (error) {
     return <div>에러 발생</div>;
   }
 
-  if (!isLoading && !error && data) {
+  if (data) {
     return <div>{data.title}</div>;
   }
 
