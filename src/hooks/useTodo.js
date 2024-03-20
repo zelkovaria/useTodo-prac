@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const useTodo = (id) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
