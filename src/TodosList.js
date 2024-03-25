@@ -14,11 +14,7 @@ const TodosList = () => {
     return <div>에러 발생</div>;
   }
 
-  if (data) {
-    return <div>{data.title}</div>;
-  }
-
-  return <>기다려주세요</>;
+  return <div>{data.title}</div>;
 };
 
 export default TodosList;
