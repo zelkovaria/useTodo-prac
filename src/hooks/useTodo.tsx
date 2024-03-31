@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useTodo = (id: string) => {
+const useTodo = (id: string | undefined) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
   useEffect(() => {
+    if (id === undefined) {
+      setIsLoading(false);
+      setData(undefined);
+      return;
+    }
     const fetchData = async () => {
       setIsLoading(true);
       try {
