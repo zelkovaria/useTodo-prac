@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useTodo = (id) => {
+const useTodo = (id: string) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
