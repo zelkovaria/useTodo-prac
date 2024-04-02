@@ -11,3 +11,10 @@
 4. 데이터를 가져온 후 200번대 응답이면 data 는 가져온 data 자체 (즉 객체), isLoading 은 false, error 는 undefind
 
 5. 데이터를 가져온 후 400번대 혹은 500번대 응답이면 data 는 undefind, isLoading 은 false, error 는 에러 객체 그 자체
+
+
+<hr />
+1. 리스트 페이지도 만드시오
+주소: /todos
+기능: 전체 todo 를 불러와서 화면에 보여주고, 하나를 누르면 해당 todo 페이지로 이동
+만들어야 하는 hook: useTodos
