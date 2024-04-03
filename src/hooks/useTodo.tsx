@@ -6,7 +6,7 @@ interface Todo {
   title: string;
 }
 
-const useTodo = (id: string | undefined) => {
+const useTodo = (id?: string) => {
   const [data, setData] = useState<Todo | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<any>();
