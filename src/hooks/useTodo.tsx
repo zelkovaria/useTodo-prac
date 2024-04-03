@@ -14,7 +14,6 @@ const useTodo = (id?: string) => {
   useEffect(() => {
     if (!id) {
       setIsLoading(false);
-      setData(undefined);
       return;
     }
     const fetchData = async () => {
