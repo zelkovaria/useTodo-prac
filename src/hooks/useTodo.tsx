@@ -12,7 +12,7 @@ const useTodo = (id?: string) => {
   const [error, setError] = useState<any>();
 
   useEffect(() => {
-    if (id === undefined) {
+    if (!id) {
       setIsLoading(false);
       setData(undefined);
       return;
