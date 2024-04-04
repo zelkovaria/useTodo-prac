@@ -9,12 +9,8 @@ const TodosList = () => {
     return <div>로딩중</div>;
   }
 
-  if (error) {
+  if (error || !data) {
     return <div>에러 발생</div>;
-  }
-
-  if (!data) {
-    return <div>데이터가 존재하지 않습니다</div>;
   }
 
   return <div>{data.title}</div>;
