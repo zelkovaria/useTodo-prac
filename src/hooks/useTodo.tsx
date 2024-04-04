@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const useTodo = (id) => {
-  const [data, setData] = useState();
+interface Todo {
+  id: number;
+  title: string;
+}
+
+const useTodo = (id?: string) => {
+  const [data, setData] = useState<Todo>();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState();
+  const [error, setError] = useState<unknown>();
 
   useEffect(() => {
+    if (!id) {
+      setIsLoading(false);
+      return;
+    }
     const fetchData = async () => {
       setIsLoading(true);
       try {
@@ -14,7 +23,7 @@ const useTodo = (id) => {
           `https://jsonplaceholder.typicode.com/todos/${id}`
         );
         setData(response.data);
-      } catch (error) {
+      } catch (error: unknown) {
         setError(error);
       } finally {
         setIsLoading(false);

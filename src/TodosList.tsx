@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router-dom";
 import useTodo from "./hooks/useTodo";
 
@@ -10,7 +9,7 @@ const TodosList = () => {
     return <div>로딩중</div>;
   }
 
-  if (error) {
+  if (error || !data) {
     return <div>에러 발생</div>;
   }
 
