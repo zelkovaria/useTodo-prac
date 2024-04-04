@@ -9,7 +9,7 @@ interface Todo {
 const useTodo = (id?: string) => {
   const [data, setData] = useState<Todo>();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<any>();
+  const [error, setError] = useState<unknown>();
 
   useEffect(() => {
     if (!id) {
